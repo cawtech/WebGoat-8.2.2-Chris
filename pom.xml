@@ -275,21 +275,21 @@
         </profile>
     </profiles>
 
-    <repositories>
+   <!-- reositories>
         <repository>
             <id>central</id>
             <url>https://repo.maven.apache.org/maven2</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
-        </repository>
+        </repository>    -->
 
 <!--
     	<repository>
      		<id>maven-group</id>
       		<url>http://localhost:8081/repository/maven-group/</url>
     	</repository>
--->
+
 
     </repositories>
     <pluginRepositories>
@@ -301,26 +301,26 @@
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
-
+-->
 
 
 <!-- Chris Inserted the lines below -->
 
 <!--Distribution management controls the Nexus repo location -->
-	<!--  <distributionManagement>  -->
-	<!-- 	<repository>  -->
-	<!-- 		<id>maven-group</id>  -->
-	<!--		<url>http://localhost:8081/repository/maven-group/</url>  -->
-			<!--	<url>https://nxrm-cwolters.sonatypedev.com:444/repository/maven-releases/</url>  -->
-			<!-- <url>http://localhost:8081/respository/webgoat/</url>  --> 
-	<!--	</repository>
+     <distributionManagement> 
+	 	<repository> 
+			<id>maven-group</id> 
+			<url>http://52.45.21.93:8081/repository/maven-group/</url> 
+			<!-- https://nxrm-cwolters.sonatypedev.com:444/repository/maven-releases/</url> -->
+			<!-- http://52.45.21.93:8081/respository/webgoat/</url>   -->
+	</repository>
 
 		<snapshotRepository>
-                        <id>maven-snapshots</id>
-                        <url>http://localhost:8081/repository/maven-snapshots/</url> 
-			comment <url>https://nxrm-cwolters.sonatypedev.com:444/repository/maven-snapshots/</url>  
+            <id>maven-snapshots</id>
+            <url>http://52.45.21.93:8081/repository/maven-snapshots/</url> 
+			<!-- <url>https://nxrm-cwolters.sonatypedev.com:444/repository/maven-snapshots/</url>  -->
 			</snapshotRepository>
-	</distributionManagement>    -->
+	</distributionManagement>    
 
 <!-- End of lines Chris inserted -->
 
