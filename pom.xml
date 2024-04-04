@@ -171,11 +171,6 @@
             <groupId>javax.xml.bind</groupId>
             <artifactId>jaxb-api</artifactId>
         </dependency>
-	<dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.14.0</version>
-        </dependency>
     </dependencies>
 
     <build>
@@ -338,4 +333,5 @@
 <!-- 8th time Chris adding line to test auto pull and scan 22MAR -->
 <!-- 9th time Chris adding line to test auto pull and scan 9SEP -->
 <!-- new change to add this line to test scan with new token -->
+<!-- deleted log4j -->
 </project>
