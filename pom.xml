@@ -174,7 +174,11 @@
         <dependency>
             <groupId>com.thoughtworks.xstream</groupId>
             <artifactId>xstream</artifactId>
+<<<<<<< HEAD
             <version>1.4.9</version>
+=======
+            <version>1.4.10</version>
+>>>>>>> f345d209b9702380d94f6f0571cf4cea7fa5a9cc
         </dependency>
     </dependencies>
 
@@ -342,4 +346,5 @@
 <!-- adding a comment to test auto pull and scan 3APR2024-->
 <!-- adding a comment to test auto pull and scan 4APR 1740-->
 <!-- 5APR 0720-->
+<!-- 5APR 0830 -->
 </project>
