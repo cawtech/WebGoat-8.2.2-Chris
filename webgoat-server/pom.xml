@@ -211,4 +211,11 @@
         </plugins>
     </build>
 <!-- Chris add comment #1 to commit change to github -->
+
+    <dependency>
+        <groupId>org.yaml</groupId>
+        <artifactId>snakeyaml</artifactId>
+        <version>1.13</version>
+    </dependency>
+
 </project>
