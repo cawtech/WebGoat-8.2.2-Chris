@@ -1,5 +1,6 @@
 pipeline {
   agent any
+
   stages {
     stage('Checkout') {
       steps {
@@ -9,7 +10,6 @@ pipeline {
 
     stage('IQ Scan') {
       steps {
-        // Your CLI scan logic here
         sh '''
           docker run --rm \
             --network poc-env_default \
