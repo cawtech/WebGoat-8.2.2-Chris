@@ -11,13 +11,13 @@ pipeline {
 
 stage('IQ Scan') {
   steps {
-    sh '''
-      docker run --rm \
-        --network poc-env_default \
-        -v /home/chris/poc-env/nexus-iq/iq-cli.jar:/nexus-iq/iq-cli.jar \
-        -v "${WORKSPACE}":/src \
-        openjdk:17 \
-          bash -c "echo --- /src content --- && ls -la /src && echo --- recursive scan --- && find /src || true"
+sh '''
+  docker run --rm \
+    --network poc-env_default \
+    -v /home/chris/poc-env/nexus-iq/iq-cli.jar:/nexus-iq/iq-cli.jar \
+    -v "${WORKSPACE}":/src \
+    openjdk:17 \
+      bash -c "echo --- /src contents --- && ls -la /src && echo --- all files --- && find /src || true"
 '''
 		
       }
