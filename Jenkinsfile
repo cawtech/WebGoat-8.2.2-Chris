@@ -14,10 +14,14 @@ stage('IQ Scan') {
 sh '''
   docker run --rm \
     --network poc-env_default \
-    -v /home/chris/poc-env/nexus-iq/iq-cli.jar:/nexus-iq/iq-cli.jar \
+    -v iq-cli-volume:/nexus-iq \
     -v "${WORKSPACE}":/src \
     openjdk:17 \
-      bash -c "echo --- /src contents --- && ls -la /src && echo --- all files --- && find /src || true"
+      java -jar /nexus-iq/iq-cli.jar \
+      -s http://iq:8070 \
+      -a admin:admin123 \
+      -i WebGoatPOC \
+      -t build /src/pom.xml
 '''
 		
       }
