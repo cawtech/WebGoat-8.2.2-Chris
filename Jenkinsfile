@@ -8,6 +8,15 @@ pipeline {
       }
     }
 
+        sh '''
+          echo "🔍 Inspecting container mount"
+          docker run --rm \
+            --network poc-env_default \
+            -v "${WORKSPACE}":/src \
+            openjdk:17 \
+              ls -la /src
+        '''
+
     stage('IQ Scan') {
      steps {
         sh '''
