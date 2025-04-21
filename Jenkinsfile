@@ -9,7 +9,7 @@ pipeline {
     }
 
         sh '''
-          echo "🔍 Inspecting container mount"
+          echo "Inspecting container mount"
           docker run --rm \
             --network poc-env_default \
             -v "${WORKSPACE}":/src \
