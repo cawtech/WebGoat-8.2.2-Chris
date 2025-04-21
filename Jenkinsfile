@@ -9,12 +9,11 @@ pipeline {
     }
 
     stage('IQ Scan') {
-      steps {
         sh '''
           docker run --rm \
             --network poc-env_default \
             -v "$WORKSPACE":/src \
-            -v "$PWD/iq-cli.jar":/cli/iq-cli.jar \
+            -v /home/chris/poc-env/iq-cli.jar:/cli/iq-cli.jar \
             openjdk:17 \
               java -jar /cli/iq-cli.jar \
               -s http://iq:8070 \
