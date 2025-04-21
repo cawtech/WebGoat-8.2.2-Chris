@@ -14,7 +14,7 @@ stage('IQ Scan') {
      sh '''
        docker run --rm \
          --network poc-env_default \
-         -v /home/chris/poc-env/iq-cli.jar:/nexus-iq/iq-cli.jar \
+         -v /home/chris/poc-env/nexus-iq/iq-cli.jar:/nexus-iq/iq-cli.jar \
          -v "${WORKSPACE}":/src \
          openjdk:17 \
            java -jar /nexus-iq/iq-cli.jar \
