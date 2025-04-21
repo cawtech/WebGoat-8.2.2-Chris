@@ -9,6 +9,7 @@ pipeline {
     }
 
     stage('IQ Scan') {
+     steps {
         sh '''
           docker run --rm \
             --network poc-env_default \
