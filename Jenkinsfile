@@ -45,7 +45,7 @@ stage('IQ Scan') {
         -v /home/chris/poc-env/iq-cli.jar:/tools/iq-cli.jar \
         -v "${WORKSPACE}":/src \
         openjdk:17 \
-          bash -c "echo 🔍 CONTENTS OF /src && ls -la /src && echo 🔍 RECURSIVE FILE SEARCH && find /src"
+          bash -c "echo CONTENTS OF /src && ls -la /src && echo RECURSIVE FILE SEARCH && find /src"
     '''
 
       }
