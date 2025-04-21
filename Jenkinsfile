@@ -13,7 +13,7 @@ pipeline {
         sh '''
           docker run --rm \
             --network poc-env_default \
-            -v "$WORKSPACE":/src \
+            -v "${WORKSPACE}":/src \
             -v /home/chris/poc-env/iq-cli.jar:/cli/iq-cli.jar \
             openjdk:17 \
               java -jar /cli/iq-cli.jar \
