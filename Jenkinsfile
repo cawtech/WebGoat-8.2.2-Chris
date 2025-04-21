@@ -11,18 +11,15 @@ pipeline {
 
 stage('IQ Scan') {
   steps {
-     sh '''
-       docker run --rm \
-         --network poc-env_default \
-         -v /home/chris/poc-env/nexus-iq/iq-cli.jar:/nexus-iq/iq-cli.jar \
-         -v "${WORKSPACE}":/src \
-         openjdk:17 \
-           java -jar /nexus-iq/iq-cli.jar \
-           -s http://iq:8070 \
-           -a admin:admin123 \
-           -i WebGoatPOC \
-           -t build /src/pom.xml
-     '''
+    sh '''
+      docker run --rm \
+        --network poc-env_default \
+        -v /home/chris/poc-env/nexus-iq/iq-cli.jar:/nexus-iq/iq-cli.jar \
+        -v "${WORKSPACE}":/src \
+        openjdk:17 \
+          bash -c "echo --- /src content --- && ls -la /src && echo --- recursive scan --- && find /src || true"
+'''
+		
       }
     }
   }
