@@ -24,10 +24,10 @@ stage('IQ Scan') {
         sh '''
           docker run --rm \
             --network poc-env_default \
-            -v /home/chris/poc-env/iq-cli.jar:/cli/iq-cli.jar \
+            -v /home/chris/poc-env/iq-cli.jar:/tools/iq-cli.jar \
             -v "${WORKSPACE}":/src \
             openjdk:17 \
-              java -jar /cli/iq-cli.jar \
+              java -jar /tools/iq-cli.jar \
               -s http://iq:8070 \
               -a admin:admin123 \
               -i WebGoatPOC \
