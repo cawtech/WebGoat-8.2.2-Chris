@@ -9,8 +9,8 @@ pipeline {
     }
 
 
-/*
 stage('IQ Scan') {
+//
   steps {
     // 🔍 Temporary debug: show contents of /src inside the container
     sh '''
@@ -21,8 +21,7 @@ stage('IQ Scan') {
         openjdk:17 \
           ls -la /src
     '''
-
-    // Actual scan
+*/
         sh '''
           docker run --rm \
             --network poc-env_default \
@@ -35,8 +34,8 @@ stage('IQ Scan') {
               -i WebGoatPOC \
               -t build /src/pom.xml
         '''
-*/
 
+//
 stage('IQ Scan') {
   steps {
     sh '''
@@ -47,7 +46,7 @@ stage('IQ Scan') {
         openjdk:17 \
           bash -c "echo CONTENTS OF /src && ls -la /src && echo RECURSIVE FILE SEARCH && find /src"
     '''
-
+*/
       }
     }
   }
