@@ -55,3 +55,32 @@ webgoat.script
 TestClass.class
 **/*.flattened-pom.xml
 /.gitconfig
+
+# Node.js related
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# Sonatype-related files
+.sonatype/
+
+# IDE/Editor related
+.vscode/
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+
+# macOS and Linux related
+.DS_Store
+.Thumbs.db
+
+# Build output
+/target/
+/dist/
+/build/
+
+# Log files
+*.log
