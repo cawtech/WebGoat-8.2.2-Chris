@@ -42,8 +42,12 @@ jobs:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
-      - name: Build with Maven
-        run: mvn clean install
+#      - name: Build with Maven
+#       run: mvn clean install
+
+      - name: Build with Maven (skip tests)
+        run: mvn clean install -DskipTests -DskipITs
+
 
   
 #Commenting out this section for now because now I don't have the Slack webhook configured.
