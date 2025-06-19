@@ -37,7 +37,7 @@ jobs:
           java-version: ${{ matrix.java }}
           architecture: x64
       - name: Cache Maven packages
-        uses: actions/cache@v2.1.5
+        uses: actions/cache@v4
         with:
           path: ~/.m2
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
@@ -45,14 +45,16 @@ jobs:
       - name: Build with Maven
         run: mvn clean install
 
-  notify-slack:
-    if: github.event_name == 'push' && (success() || failure())
-    needs:
-      - build
-    runs-on: ubuntu-latest
-    steps:
-      - name: "Slack workflow notification"
-        uses: Gamesight/slack-workflow-status@master
-        with:
-          repo_token: ${{secrets.GITHUB_TOKEN}}
-          slack_webhook_url: ${{secrets.SLACK_WEBHOOK_URL}}
+  
+#Commenting out this section for now because now I don't have the Slack webhook configured.
+#notify-slack:
+#    if: github.event_name == 'push' && (success() || failure())
+#    needs:
+#      - build
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: "Slack workflow notification"
+#        uses: Gamesight/slack-workflow-status@master
+#        with:
+#          repo_token: ${{secrets.GITHUB_TOKEN}}
+#          slack_webhook_url: ${{secrets.SLACK_WEBHOOK_URL}}
